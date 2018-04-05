@@ -1,0 +1,20 @@
+{
+    "root": "public",
+    "name": "Debug",
+    "dashboard": "./crash.jsx",
+    "order": 4,
+    "priority":2,
+    "admin_link": true,
+    "allow": [
+        "rw-rbac-platform:super-admin",
+        "rw-rbac-platform:platform-admin",
+        "rw-rbac-platform:platform-oper"
+    ],
+    "routes" : [{
+        "label": "Debug",
+        "route": "/",
+        "component": "./crash.jsx",
+        "path": "",
+        "type": "internal"
+    }]
+}

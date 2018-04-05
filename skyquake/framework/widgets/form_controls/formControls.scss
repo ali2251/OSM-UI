@@ -1,0 +1,164 @@
+/*
+ *
+ *   Copyright 2016 RIFT.IO Inc
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ */
+@import '../../style/_colors.scss';
+
+.sqTextInput {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    width: 100%;
+    margin-bottom:1rem;
+    -ms-flex-align: start;
+        align-items: flex-start;
+    -ms-flex-pack:start;
+        justify-content:flex-start;
+    span {
+        color:$darker-gray;
+        text-transform:uppercase;
+    }
+    input, textarea {
+        height: 35px;
+        /* box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.39), 0 -1px 1px #ffffff, 0 1px 0 #ffffff;*/
+        font-size: 1rem;
+        display: block;
+        background: white !important;
+        margin: 0;
+        margin-top: 0.25rem;
+        padding-left:0.25rem;
+        min-width:100%;
+        &[disabled] {
+            background:#ccc;
+        }
+    }
+    .readonly {
+        line-height: 35px;
+        box-shadow:none;
+        background:none !important;
+    }
+    textarea {
+        -ms-flex-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-items: stretch;
+        border:0px;
+        height: 100%;
+    }
+    &.checkbox {
+        -ms-flex-direction:row;
+            flex-direction:row;
+            -ms-flex-align:center;
+                align-items:center;
+        margin-bottom:0;
+            >span {
+                -ms-flex-order: 1;
+                    order: 1;
+                    padding-left:1rem;
+            }
+            >input {
+                -ms-flex-order: 0;
+                    order: 0;
+
+                    box-shadow:none;
+                    height:25px;
+            }
+    }
+    .invalid {
+        color: red;
+        font-weight:strong;
+    }
+     input:invalid {
+        border: 2px solid red;
+        &:after {
+            content: 'Invalid Value'
+        }
+    }
+}
+
+.sqCheckBox {
+    display:-ms-flexbox;
+    display:flex;
+    label {
+        display:-ms-flexbox;
+        display:flex;
+        -ms-flex-align: center;
+        align-items: center;
+        input {
+            box-shadow: none;
+            height: auto;
+            margin: 0 0.25rem;
+        }
+    }
+}
+
+.FormSection {
+    &-title {
+        color: #000;
+        background: lightgray;
+        padding: 0.5rem;
+        border-top: 1px solid #f1f1f1;
+        border-bottom: 1px solid #f1f1f1;
+    }
+    &-body {
+        padding: 0.5rem 0.75rem;
+    }
+    label {
+        -ms-flex: 1 0;
+            flex: 1 0;
+    }
+    /* label {*/
+    /*     display: -ms-flexbox;*/
+    /*     display: flex;*/
+    /*     -ms-flex-direction: column;*/
+    /*     flex-direction: column;*/
+    /*     width: 100%;*/
+    /*     margin: 0.5rem 0;*/
+    /*     -ms-flex-align: start;*/
+    /*     align-items: flex-start;*/
+    /*     -ms-flex-pack: start;*/
+    /*     justify-content: flex-start;*/
+    /* }*/
+    select {
+        font-size: 1rem;
+        min-width: 75%;
+        height: 35px;
+    }
+}
+
+
+
+
+.InputCollection {
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -ms-flex-align: center;
+        align-items: center;
+    button {
+        padding: 0.25rem;
+        height: 1.5rem;
+        font-size: 0.75rem;
+    }
+    select {
+        min-width: 100%;
+    }
+    margin-bottom:0.5rem;
+    &-wrapper {
+
+    }
+}

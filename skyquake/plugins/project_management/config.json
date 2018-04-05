@@ -1,0 +1,19 @@
+{
+    "root": "public",
+    "name": "Project Management",
+    "dashboard": "./dashboard/dashboard.jsx",
+    "order": 1,
+    "priority":2,
+    "admin_link": true,
+    "allow": [
+        "rw-rbac-platform:super-admin",
+        "rw-project:project-admin",
+        "rw-project:project-oper"],
+    "routes": [
+    {
+        "label": "Project Management Dashboard",
+        "route": "project-management",
+        "component": "./dashboard/dashboard.jsx",
+        "type": "internal"
+    }]
+}

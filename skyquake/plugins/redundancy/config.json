@@ -1,0 +1,41 @@
+{
+    "root": "public",
+    "name": "Redundancy",
+    "dashboard": "./dashboard/sites.jsx",
+    "order": 3,
+    "priority":2,
+    "admin_link": true,
+    "allow": [
+        "rw-rbac-platform:super-admin",
+        "rw-rbac-platform:platform-admin",
+        "rw-rbac-platform:platform-oper"
+    ],
+    "routes": [
+    {
+        "label": "Sites",
+        "route": "sites",
+        "component": "./dashboard/sites.jsx",
+        "path": "sites",
+        "type": "internal",
+        "routes": [
+
+        ]
+    },{
+        "label": "Config",
+        "route": "config",
+        "component": "./dashboard/config.jsx",
+        "path": "config",
+        "type": "internal",
+        "routes": [
+
+        ]
+    },{
+        "label": "Status",
+        "route": "status",
+        "component": "./dashboard/status.jsx",
+        "path": "status",
+        "type": "internal",
+        "routes": [
+        ]
+    }]
+}

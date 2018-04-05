@@ -1,0 +1,347 @@
+/*
+ * STANDARD_RIFT_IO_COPYRIGHT
+ */
+
+@import "style/_colors.scss";
+
+.projectManagement {
+        max-width: 1200px;
+
+    .skyquakePanel-wrapper {
+        overflow-x: hidden;
+    }
+    .projectList {
+
+        -ms-flex: 0 1 200px;
+        -webkit-box-flex: 0;
+                flex: 0 1 200px;
+
+        .activeUser {
+            font-weight:bold;
+        }
+
+        /* transition: all 2s;*/
+        &.expanded {
+            -ms-flex: 1 1 100%;
+            -webkit-box-flex: 1;
+                    flex: 1 1 100%;
+            /* transition: all 300ms;*/
+            .tableRow>div:not(.projectName) {
+                opacity: 1;
+                /* width:auto;*/
+                /* transition: width 600ms;*/
+                /* transition: opacity 300ms;*/
+            }
+            &.collapsed {
+                -ms-flex: 0 1 200px;
+                -webkit-box-flex: 0;
+                        flex: 0 1 200px;
+                /* transition: all 2s;*/
+                .tableRow>div:not(.projectName) {
+                    /* opacity: 0;*/
+                    /* width:0px;*/
+                    display:none;
+                    overflow:hidden;
+                    /* transition: all 600ms;*/
+                }
+            }
+        }
+        &.hideColumns {
+            overflow:hidden;
+            >div {
+                overflow:hidden;
+            }
+            .tableRow>div:not(.projectName) {
+                width: 0px;
+                /* transition: all 600ms;*/
+            }
+            .projectName {
+                &--header {
+                    /* display:none;*/
+             }
+            }
+        }
+        .projectName {
+            &:not(:first-child) {
+                cursor:pointer;
+            }
+        }
+
+
+    }
+
+    .projectAdmin {
+            -ms-flex: 1 1;
+            -webkit-box-flex: 1;
+                    flex: 1 1;
+            width:auto;
+            opacity:1;
+
+        textarea{
+            height: 100px;
+        }
+    }
+    &.projectList-open {
+        .projectAdmin {
+            -ms-flex: 0 1 0px;
+                -webkit-box-flex: 0;
+                    flex: 0 1 0px;
+            opacity:0;
+            /* width: 0px;*/
+            display:none;
+            /* transition: opacity 300ms;*/
+            /* transition: width 600ms;*/
+
+        }
+    }
+    .rbacButtonGroup {
+        margin: 0 0.5rem 0.5rem;
+        background: #ddd;
+        padding-bottom: 0.5rem;
+        padding: 0.5rem 0;
+    }
+    .buttonGroup {
+        border-top: #d3d3d3 1px solid;
+        padding-top:0.5rem;
+    }
+    .addUser {
+        display:-ms-flexbox;
+        display:-webkit-box;
+        display:flex;
+        -ms-flex-direction:row;
+            -webkit-box-orient:horizontal;
+            -webkit-box-direction:normal;
+                flex-direction:row;
+        label {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex: 0 1;
+            -webkit-box-flex: 0;
+                flex: 0 1;
+
+            width:150px;
+            span {
+                margin-bottom: 0.5rem;
+            }
+            span:nth-child(2) {
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
+                -webkit-box-flex: 1;
+                    -ms-flex: 1;
+                        flex: 1;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+            }
+
+            margin-right: 1rem;
+            select {
+                width:150px;
+            }
+        }
+        .noUsersAvailable {
+            display:-webkit-box;
+            display:-ms-flexbox;
+            display:flex;
+            -webkit-box-align: start;
+                -ms-flex-align: start;
+                    align-items: flex-start;
+            margin-bottom: 0.75rem;
+            -webkit-box-flex: 1;
+                -ms-flex: 1;
+                    flex: 1;
+            div {
+                width:260px;
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+    .projectUsers {
+        .userName {
+            -ms-flex-pack: start;
+            -webkit-box-pack: start;
+                    justify-content: flex-start;
+            padding-top: 0.75rem;
+        }
+        select {
+            margin-bottom:0.5rem;
+        }
+        .addRole {
+            margin:.25rem 0;
+        }
+        .buttonGroup {
+            display:-ms-flexbox;
+            display:-webkit-box;
+            display:flex;
+        }
+
+    }
+    .projectUsers.tableRow--data:hover {
+            background:none;
+            color: black;
+        }
+
+    table {
+        font-size: 0.8rem;
+        thead {
+            border-bottom:1px solid #d3d3d3;
+            td{
+                font-weight:bold;
+            }
+        }
+        td{
+            padding:0.25rem 0.5rem;
+            vertical-align: middle;
+            .checkbox {
+                -ms-flex-pack:center;
+                    -webkit-box-pack:center;
+                        justify-content:center;
+            }
+        }
+        tbody tr {
+            &:nth-child(even) {
+                background:$neutral-dark-0;
+            }
+        }
+    }
+    .userTable {
+        .FormSection-body {
+            overflow-x: auto;
+        }
+    }
+}
+
+
+
+.FormSection {
+    &-title {
+        color: #000;
+        background: lightgray;
+        padding: 0.5rem;
+        border-top: 1px solid #f1f1f1;
+        border-bottom: 1px solid #f1f1f1;
+    }
+    &-body {
+        padding: 0.5rem 0.75rem;
+    }
+    label {
+        -ms-flex: 1 0;
+            -webkit-box-flex: 1;
+                flex: 1 0;
+    }
+    /* label {*/
+    /*     display: -ms-flexbox;*/
+    /*     display: flex;*/
+    /*     -ms-flex-direction: column;*/
+    /*     flex-direction: column;*/
+    /*     width: 100%;*/
+    /*     margin: 0.5rem 0;*/
+    /*     -ms-flex-align: start;*/
+    /*     align-items: flex-start;*/
+    /*     -ms-flex-pack: start;*/
+    /*     justify-content: flex-start;*/
+    /* }*/
+    select {
+        font-size: 1rem;
+        min-width: 75%;
+        height: 35px;
+    }
+}
+
+
+.InputCollection {
+    display:-ms-flexbox;
+    display:-webkit-box;
+    display:flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -ms-flex-align: center;
+        -webkit-box-align: center;
+            align-items: center;
+    button {
+        padding: 0.25rem;
+        height: 1.5rem;
+        font-size: 0.75rem;
+    }
+    select {
+        min-width: 100%;
+    }
+    margin-bottom:0.5rem;
+    &-wrapper {
+
+    }
+}
+.tableRow {
+    display:-ms-flexbox;
+    display:-webkit-box;
+    display:flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    padding: 0.25rem;
+    >div {
+        padding: 0.25rem;
+        -ms-flex: 1 1 33%;
+            -webkit-box-flex: 1;
+                flex: 1 1 33%;
+        display: -ms-flexbox;
+        display: -webkit-box;
+        display: flex;
+        -ms-flex-direction: column;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                flex-direction: column;
+        -ms-flex-pack: center;
+            -webkit-box-pack: center;
+                justify-content: center;
+    }
+    &--header {
+        font-weight:bold;
+    }
+    &--data {
+        &:nth-child(even) {
+            background:$neutral-dark-0;
+        }
+        &:hover:not(&-active) {
+            background:$neutral-dark-1;
+        }
+        &:hover, .activeUser, &-active{
+            cursor:pointer;
+            color:white;
+        }
+        .activeUser, &-active{
+            background: #00acee;
+        }
+    }
+}
+
+.addInput, .removeInput {
+    display:-ms-flexbox;
+    display:-webkit-box;
+    display:flex;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    margin-bottom: 0.75rem;
+    margin-left: 1rem;
+
+    font-size:0.75rem;
+    text-transform:uppercase;
+    font-weight:bold;
+
+    cursor:pointer;
+    img {
+        height:0.75rem;
+        margin-right:0.5rem;
+        width:auto;
+    }
+    span {
+        color: #5b5b5b;
+        text-transform: uppercase;
+    }
+}

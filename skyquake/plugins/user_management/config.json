@@ -1,0 +1,33 @@
+{
+    "root": "public",
+    "name": "User Management",
+    "dashboard": "./dashboard/dashboard.jsx",
+    "order": 2,
+    "priority":1,
+    "admin_link": true,
+    "allow": [
+        "rw-rbac-platform:super-admin",
+        "rw-rbac-platform:platform-admin",
+        "rw-rbac-platform:platform-oper"],
+    "routes": [
+    {
+        "label": "User Management Dashboard",
+        "route": "user-management",
+        "component": "./dashboard/dashboard.jsx",
+        "type": "internal",
+        "allow": ["rw-rbac-platform:super-admin", "rw-rbac-platform:platform-admin", "rw-rbac-platform:platform-oper"]
+    },{
+        "label": "Platform Role Management",
+        "route": "platform",
+        "component": "./platformRoleManagement/platformRoleManagement.jsx",
+        "type": "external"
+    },
+      {
+        "label": "User Profile",
+        "route": "user-profile",
+        "component": "./userProfile/userProfile.jsx",
+        "type": "internal",
+        "unique" : true
+    }
+    ]
+}

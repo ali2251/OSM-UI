@@ -1,0 +1,43 @@
+<style type="text/css">
+	
+html {
+	background: #f1f1f1;
+}
+
+body {
+	background: #f1f1f1;
+}
+#idpfail {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+}
+#idpfail .message {
+	display: flex;
+	margin-bottom: 20px;
+	font-size: 1.625rem;
+	font-weight: 400;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: roboto-thin, Helvetica, Arial, sans-serif;
+	color: #CD5C5C;
+}
+#retrylink {
+	margin-top:40px;
+	font-family: roboto-thin, Helvetica, Arial, sans-serif;
+}
+
+
+</style>
+<div id="idpfail">
+	<p class="message">
+		We are having trouble connecting to the Identity Provider.
+	</p>
+	<p class="message">
+		Please check that it is running and reachable.
+	</p>
+	<p id="retrylink">
+		Once you have resolved the connectivity issues, <a href="<%= callback_url %>">please click here to retry.</a>
+	</p>
+</div>

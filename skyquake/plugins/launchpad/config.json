@@ -1,0 +1,77 @@
+{
+    "root": "public",
+    "name": "Launchpad",
+    "dashboard": "./launchpad.jsx",
+    "order": 1,
+    "priority":1,
+    "allow": [
+        "rw-rbac-platform:super-admin",
+        "rw-project:project-admin",
+        "rw-project:project-oper",
+        "rw-project-mano:lcm-oper",
+        "rw-project-mano:lcm-admin"],
+    "routes": [
+    {
+        "label": "Dashboard",
+        "route": "/",
+        "component": "./launchpad.jsx",
+        "path": "",
+        "query":"name",
+        "type": "external"
+    },{
+        "label": "Instantiate",
+        "route": "/instantiate",
+        "component": "./instantiate/instantiateDashboard.jsx",
+        "path": "",
+        "type": "external",
+        "allow": [
+            "rw-rbac-platform:super-admin",
+            "rw-project:project-admin",
+            "rw-project-mano:lcm-admin"
+        ],
+        "routes": [
+            {
+                "label": "Instantiate",
+                "route": ":nsd",
+                "component": "./instantiate/instantiateParameters.jsx",
+                "path": ":nsd",
+                "type": "internal",
+                "allow": [
+                    "rw-rbac-platform:super-admin",
+                    "rw-project:project-admin",
+                    "rw-project-mano:lcm-admin"
+                ]
+            }
+        ]
+    },{
+        "label": "SSH Keys",
+        "route": "/ssh-keys",
+        "component": "./ssh_keys/sshKeys.jsx",
+        "path": "",
+        "type": "external"
+    },
+    {
+        "label": "Viewport",
+        "route": "/viewport",
+        "query": "id",
+        "component": "./recordViewer/recordView.jsx",
+        "type": "internal",
+        "routes": [
+
+        ]
+    },{
+        "label": "Compute Topology",
+        "route": "/compute-topology",
+        "query": "id",
+        "component": "./topologyView/topologyView.jsx",
+        "path": "",
+        "type": "internal"
+    },{
+        "label": "Network Topology",
+        "route": "/network-topology",
+        "query": "id",
+        "component": "./topologyL2View/topologyL2View.jsx",
+        "path": "",
+        "type": "internal"
+    }]
+}

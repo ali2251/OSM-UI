@@ -1,0 +1,7 @@
+npm-debug.log
+*.swp
+node_modules
+public
+dist
+yarn.lock
+upload/

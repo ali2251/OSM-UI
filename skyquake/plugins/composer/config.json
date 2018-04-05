@@ -1,0 +1,21 @@
+{
+    "copyright": "2016 RIFT.IO Inc",
+    "license": "Apache 2.0",
+    "root": "public",
+    "name": "Catalog",
+    "dashboard" : "./src/components/ComposerApp.js",
+    "order": 2,
+    "allow": [
+        "rw-rbac-platform:super-admin",
+        "rw-project:project-admin",
+        "rw-project:project-oper",
+        "rw-project-mano:catalog-oper",
+        "rw-project-mano:catalog-admin"],
+    "routes" : [{
+        "label": "Catalog",
+        "route": "/",
+        "component": "./src/components/ComposerApp.js",
+        "path": "",
+        "type": "internal"
+    }]
+}

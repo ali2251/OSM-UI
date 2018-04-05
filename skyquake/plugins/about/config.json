@@ -1,0 +1,20 @@
+{
+    "root": "public",
+    "name": "About",
+    "dashboard": "./about.jsx",
+    "order": 15,
+    "priority":2,
+    "admin_link": true,
+    "allow": [
+        "rw-rbac-platform:super-admin",
+        "rw-rbac-platform:platform-admin",
+        "rw-rbac-platform:platform-oper"
+    ],
+     "routes" : [{
+        "label": "Dashboard",
+        "route": "/",
+        "component": "./about.jsx",
+        "path": "",
+        "type": "internal"
+    }]
+}

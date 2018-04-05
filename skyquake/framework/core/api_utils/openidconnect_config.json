@@ -1,0 +1,9 @@
+{
+	"scope": "openid",
+    "clientID": "cncudWkub3BlbmlkY2xpZW50",
+    "clientSecret": "riftiorocks",
+    "authorizationURL": "/authorization",
+    "tokenURL": "/token",
+    "userInfoURL": "/userinfo",
+    "callbackURL": "/callback"
+}

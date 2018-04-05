@@ -1,0 +1,28 @@
+{
+    "root": "public",
+    "name": "Configuration",
+    "dashboard": "./admin.jsx",
+    "order": 5,
+    "priority": 2,
+    "admin_link": true,
+    "allow": [
+        "rw-rbac-platform:super-admin",
+        "rw-rbac-platform:platform-admin",
+        "rw-rbac-platform:platform-oper"
+    ],
+    "routes": [{
+        "label": "Dashboard",
+        "route": "",
+        "component": "./admin.jsx",
+        "path": "",
+        "type": "internal",
+        "routes": [
+            {
+                "route": ":ref",
+                "component": "./admin.jsx",
+                "path": ":ref",
+                "type": "internal"
+            }
+        ]
+    }]
+}
